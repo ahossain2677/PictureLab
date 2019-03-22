@@ -11,19 +11,26 @@ public class IntArrayWorker
     matrix = theMatrix;
   }
     
-  public int getCount()
-    {
-        for(int count = 0) {
-            for (int row = 0; row < matrix.length; row++) {
-                for (int col = 0; col < matrix[0].length; col++) {
-                    count = count + matrix[row][col];
-                }
+    public int getCount() {
+    int count=0;
+    int l = 0;
+    for (int row = 0; row < matrix.length; row++) {
+      for (int col = 0; col < matrix[0].length; col++) {
+        for (int k = 0; k < matrix.length; k++)
+          if (matrix[k][l]==matrix[row][col]){
+          count++;
+          l++;
+        }
+          else
+            {
+              l++;
             }
-        }   
-            return ;
-            
-
+      }
     }
+
+    return count;
+  }
+
   
   /**
    * Method to return the total 
