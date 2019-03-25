@@ -31,7 +31,38 @@ public class IntArrayWorker
     return count;
   }
 
-  
+      public void GetLargest()
+        {
+            int longest=matrix[0][0];
+            for (int row = 0; row < matrix.length; row++) {
+                for (int col = 0; col < matrix[0].length; col++) {
+                    for (int k = 0; k < matrix.length; k++)
+                        if (matrix[row][col]<longest){
+                            longest = longest;
+                        }
+                        else
+                        {
+                            longest = matrix[row][col];
+                        }
+                }
+            }
+
+        }
+
+    public int getColTotal()
+    {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+        int number = input.nextInt();
+        System.out.println("You entered " + number);
+        for(int k = 0;k != matrix.length; k=k+2 )
+        {
+            int sum =matrix[k][number]+matrix[k+1][number];
+            sum = sum + matrix[k][number];
+            return sum;
+        }
+    }
   /**
    * Method to return the total 
    * @return the total of the values in the array
