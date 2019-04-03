@@ -60,6 +60,20 @@ public class Picture extends SimplePicture
     super(copyPicture);
   }
   
+  public void grayscale(){
+ Pixel[][] pixels = this.getPixels2D();
+ for (Pixel[] rowArray : pixels)
+ for (Pixel pixelObj : rowArray)
+ {
+ double average = ((pixelObj.getGreen()) + (pixelObj.getBlue())
++ (pixelObj.getRed())) / 3.0;
+ pixelObj.setRed((int) average);
+ pixelObj.setGreen((int) average);
+ pixelObj.setBlue((int) average);
+ }
+ }
+ 
+ 
   /**
    * Constructor that takes a buffered image
    * @param image the buffered image to use
